@@ -1,27 +1,29 @@
-import { useState } from "react"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Products from "./pages/Products"
 import Cart from "./pages/Cart"
-import { CartProvider } from "./context/CartContext"
 
 export default function App() {
-  const [page, setPage] = useState("products")
-
   return (
-    <CartProvider>
+    <BrowserRouter>
 
-      <button onClick={() => setPage("products")}>
-        Products
-      </button>
+      {/* NAVBAR */}
+      <nav style={{
+        padding: 16,
+        borderBottom: "1px solid #eee",
+        display: "flex",
+        gap: 20,
+        fontWeight: "bold"
+      }}>
+        <Link to="/">Products</Link>
+        <Link to="/cart">Cart</Link>
+      </nav>
 
-      <button onClick={() => setPage("cart")}>
-        Cart
-      </button>
+      {/* ROUTES */}
+      <Routes>
+        <Route path="/" element={<Products />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
 
-      {page === "products"
-        ? <Products />
-        : <Cart />
-      }
-
-    </CartProvider>
+    </BrowserRouter>
   )
 }

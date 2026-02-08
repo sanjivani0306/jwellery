@@ -3,18 +3,18 @@ module.exports = [
     id: 1,
     name: "Gold Ring",
     price: 12000,
-    image: "https://via.placeholder.com/150"
+    image: "/images/gold-ring.jpg"
   },
   {
     id: 2,
     name: "Diamond Necklace",
     price: 45000,
-    image: "https://via.placeholder.com/150"
+    image: "/images/diamond-necklace.jpg"
   },
   {
     id: 3,
-    name: "Silver Bracelet",
+    name: "Silver Bracelet",    price: 5000,
     price: 5000,
-    image: "https://via.placeholder.com/150"
+    image: "/images/silver-bracelet.jpg"
   }
-]
+];

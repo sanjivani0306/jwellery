@@ -12,13 +12,13 @@ export default function Products() {
   }, [])
 
   return (
-    <div>
-      <h2>Products</h2>
+    <div style={{ padding: 30 }}>
+      <h2 style={{ marginBottom: 20 }}>Jewelry Collection</h2>
 
       <div style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit,200px)",
-        gap: 20
+        gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+        gap: 24
       }}>
         {products.map(p => (
           <ProductCard key={p.id} product={p} />

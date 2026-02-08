@@ -1,37 +1,48 @@
 import { createContext, useContext, useState } from "react"
-import { api } from "../services/api"
 
 const CartContext = createContext()
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([])
 
-  async function addToCart(product) {
-    await api.post("/cart", {
-      productId: product.id,
-      qty: 1
+  const addToCart = (product) => {
+    setCart(prev => {
+      const found = prev.find(p => p.id === product.id)
+
+      if (found) {
+        return prev.map(p =>
+          p.id === product.id
+            ? { ...p, qty: p.qty + 1 }
+            : p
+        )
+      }
+
+      return [...prev, { ...product, qty: 1 }]
     })
-
-    setCart(prev => [...prev, { ...product, qty: 1 }])
   }
 
-  function removeItem(id) {
-    setCart(prev => prev.filter(p => p.id !== id))
-  }
-
-  function updateQty(id, qty) {
-    if (qty < 1) return
+  const changeQty = (id, delta) => {
     setCart(prev =>
-      prev.map(p => p.id === id ? { ...p, qty } : p)
+      prev
+        .map(p =>
+          p.id === id
+            ? { ...p, qty: Math.max(1, p.qty + delta) }
+            : p
+        )
     )
   }
+
+  const total = cart.reduce(
+    (sum, p) => sum + p.price * p.qty,
+    0
+  )
 
   return (
     <CartContext.Provider value={{
       cart,
       addToCart,
-      removeItem,
-      updateQty
+      changeQty,
+      total
     }}>
       {children}
     </CartContext.Provider>
