@@ -1,0 +1,12 @@
+.card {
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+}
