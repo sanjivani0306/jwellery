@@ -93,7 +93,7 @@ Returns list of jewelry products with:
 ## 1️⃣ Clone Repository
 
 ```
-git clone <repo-url>
+git clone https://github.com/sanjivani0306/jwellery
 cd naksh
 ```
 
@@ -224,5 +224,9 @@ Routes:
 
 **Sanjivani Tulugu**
 Full Stack Internship Assignment Project
+
+📄 License
+
+This project is created for internship evaluation and educational purposes.
 
 
