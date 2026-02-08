@@ -1,1 +1,228 @@
+# 💎 Naksh Jewels — Full Stack Internship Assignment
+
+A full-stack jewelry product listing and cart application built using **React (Vite)** for the frontend and **Node.js + Express** for the backend. The project demonstrates API integration, component architecture, state management, routing, and Dockerized deployment.
+
+---
+
+# 🚀 Tech Stack
+
+## Frontend
+
+* React (Vite)
+* React Router DOM
+* Context API (Cart State)
+* Axios
+* CSS / Inline Styling
+
+## Backend
+
+* Node.js
+* Express.js
+* REST API
+* dotenv
+
+## DevOps
+
+* Docker
+* Docker Compose
+* Git & GitHub
+
+---
+
+# 📂 Project Structure
+
+```
+naksh/
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── data/
+│   │   └── app.js
+│   ├── server.js
+│   └── Dockerfile
+│
+├── frontend/
+│   ├── public/images/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   ├── services/
+│   │   └── App.jsx
+│   └── Dockerfile
+│
+└── docker-compose.yml
+```
+
+---
+
+# ✨ Features
+
+* 📦 Product listing from backend API
+* 🖼 Local product images (served from frontend public folder)
+* 🛒 Add to cart functionality
+* ➕➖ Quantity controls
+* 💰 Auto total price calculation
+* 🔁 React Router navigation (Products / Cart)
+* 🌐 REST API integration
+* 🐳 Dockerized frontend + backend
+* 📁 Clean modular architecture
+
+---
+
+# 🔌 API Endpoints
+
+## Get Products
+
+```
+GET /products
+```
+
+Returns list of jewelry products with:
+
+* id
+* name
+* price
+* image path
+
+---
+
+# ⚙️ Local Development Setup
+
+## 1️⃣ Clone Repository
+
+```
+git clone <repo-url>
+cd naksh
+```
+
+---
+
+## 2️⃣ Backend Setup
+
+```
+cd backend
+npm install
+npm run dev
+```
+
+Runs on:
+
+```
+http://localhost:5000
+```
+
+---
+
+## 3️⃣ Frontend Setup
+
+Open new terminal:
+
+```
+cd frontend
+npm install
+npm run dev
+```
+
+Runs on:
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🐳 Docker Setup (Recommended)
+
+Run entire stack:
+
+```
+docker compose up --build
+```
+
+Services:
+
+| Service  | Port |
+| -------- | ---- |
+| Frontend | 3000 |
+| Backend  | 5000 |
+
+Stop:
+
+```
+docker compose down
+```
+
+---
+
+# 🛒 Cart Logic
+
+Cart is implemented using React Context API:
+
+* Global cart state
+* Add to cart
+* Quantity increment/decrement
+* Total calculation
+* Shared across routes
+
+---
+
+# 🖼 Image Handling (Pro Approach)
+
+Product images are stored locally:
+
+```
+frontend/public/images/
+```
+
+Backend returns image paths like:
+
+```
+/images/gold-ring.jpg
+```
+
+Benefits:
+
+* No external dependency failures
+* Faster load
+* Stable rendering across environments
+* More production-style asset handling
+
+---
+
+# 🧭 Routing
+
+Implemented using React Router:
+
+Routes:
+
+```
+/        → Products Page
+/cart    → Cart Page
+```
+
+---
+
+# 🧪 Sample Test Flow
+
+1. Open Products page
+2. View jewelry items
+3. Add items to cart
+4. Navigate to Cart
+5. Change quantities
+6. Verify total updates correctly
+
+---
+
+
+---
+
+
+
+# 👩‍💻 Author
+
+**Sanjivani Tulugu**
+Full Stack Internship Assignment Project
+
 
